@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bp4muyq4w4bk6"]
+
+[ext_resource type="PackedScene" uid="uid://5k85sofyxmnk" path="res://assets/Low Poly Cars/60s_muscle_car_orange.glb" id="1_khoyv"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="VehicleBody3D" instance=ExtResource("1_khoyv")]
