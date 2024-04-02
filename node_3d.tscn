@@ -1,9 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp4muyq4w4bk6"]
+[gd_scene load_steps=4 format=3 uid="uid://bp4muyq4w4bk6"]
 
 [ext_resource type="PackedScene" uid="uid://5k85sofyxmnk" path="res://assets/Low Poly Cars/60s_muscle_car_orange.glb" id="1_khoyv"]
+[ext_resource type="PackedScene" uid="uid://chjckyfeysdcd" path="res://assets/Low Poly Cars/muscle_60s_red.glb" id="2_shb5h"]
+[ext_resource type="PackedScene" uid="uid://g04o5wyp4r0m" path="res://assets/Low Poly Cars/muscle_car_classic_blue_low_poly.glb" id="3_al5t5"]
 
 [node name="Node3D" type="Node3D"]
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.08165e-12, 2.08165e-12)
 
 [node name="Sketchfab_Scene" parent="VehicleBody3D" instance=ExtResource("1_khoyv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.889658, 0, -0.0469837)
+
+[node name="VehicleBody3D2" type="VehicleBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84657, -0.786906, -2.56298)
+
+[node name="Sketchfab_Scene" parent="VehicleBody3D2" instance=ExtResource("2_shb5h")]
+transform = Transform3D(0.374437, 0, 0, 0, 0.3994, 0, 0, 0, 0.35531, 8.59524, 0.206457, 0.306151)
+
+[node name="VehicleBody3D3" type="VehicleBody3D" parent="."]
+
+[node name="Sketchfab_Scene" parent="VehicleBody3D3" instance=ExtResource("3_al5t5")]
+transform = Transform3D(0.997219, 0, 0, 0, 0.997219, 0, 0, 0, 0.997219, 3.77309, -0.405457, -1.2812)
