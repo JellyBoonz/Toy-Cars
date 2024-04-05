@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bp4muyq4w4bk6"]
+[gd_scene load_steps=5 format=3 uid="uid://bp4muyq4w4bk6"]
 
 [ext_resource type="PackedScene" uid="uid://5k85sofyxmnk" path="res://assets/Low Poly Cars/60s_muscle_car_orange.glb" id="1_khoyv"]
 [ext_resource type="PackedScene" uid="uid://chjckyfeysdcd" path="res://assets/Low Poly Cars/muscle_60s_red.glb" id="2_shb5h"]
 [ext_resource type="PackedScene" uid="uid://g04o5wyp4r0m" path="res://assets/Low Poly Cars/muscle_car_classic_blue_low_poly.glb" id="3_al5t5"]
+[ext_resource type="Script" path="res://CarPreviewContainer.gd" id="4_wl5u5"]
 
-[node name="Node3D" type="Node3D"]
+[node name="CarSelection" type="Node3D"]
 
 [node name="VehicleBody3D" type="VehicleBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.08165e-12, 2.08165e-12)
@@ -22,3 +23,30 @@ transform = Transform3D(0.374437, 0, 0, 0, 0.3994, 0, 0, 0, 0.35531, 8.59524, 0.
 
 [node name="Sketchfab_Scene" parent="VehicleBody3D3" instance=ExtResource("3_al5t5")]
 transform = Transform3D(0.997219, 0, 0, 0, 0.997219, 0, 0, 0, 0.997219, 3.77309, -0.405457, -1.2812)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CarPreviewContainer" type="Control" parent="CanvasLayer/Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_wl5u5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LeftButton" type="Button" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+
+[node name="RightButton" type="Button" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
